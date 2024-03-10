@@ -1,7 +1,7 @@
 //  - diody to reprezentacja licznika bitowego
 //  - przycisk jest źródłem informacji dla procesora
-//  - klikajac przyciskiem inkrementujemy licznik co 1
-//  - drugi przycisk inkrementuje co 10
+//  - klikajac przyciskiem inkrementujemy licznik o 1
+//  - drugi przycisk inkrementuje o 10
 
 const int buttonPinOne = 24;
 const int buttonPinTen = 25;
