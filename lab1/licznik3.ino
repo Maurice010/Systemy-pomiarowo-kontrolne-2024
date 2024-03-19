@@ -1,18 +1,16 @@
-// 1. Serial.println("test") (w przykladzie ReadASCIIString sluzyc do debugowania (patrzymy co sie dzieje na porcie klikajac lupee po prawej stronie)
-// 2. Wpisujemy liczbe 4-cyfrowa - procesor ma ja ustawic na wyswietlaczu 7-segmentowym
-// Najpierw wyswietlamy cyfry 0 - 9 na wyswietlaczu:
-// Wybieramy port 8-bitowy i podpinamy (zeby zaświecić to dajemy LOW na SEGMENT i CYFRA)
-// Potem robimy odliczanie jak w kuchence mikrofalowej 1. 2 starsze cyfry to liczba min, 2 mlodsze to sekundy, tam gdzie podzial kropka
-// Potem odliczanie dopiero po nacisnieciu przycisku
-
-// A
-//F B
-// G
-//E C
-// D dot(dp)
+// #############################
+// Wyswietlacz 8-segmentowy:
 //
-//binary - dpGFE DCBA
-//swiecenie, wybor cyfry = LOW
+//     A
+//    F B
+//     G
+//    E C
+//     D .dot(dp)
+//
+// binary - dpGFE DCBA
+// swiecenie, wybor cyfry = LOW
+// #############################
+
 const int button = 16;
 void setup() {
   DDRB = 255;
@@ -73,9 +71,8 @@ void loop() {
           cyfra[2] = (num / 10) % 10;
           cyfra[3] = num % 10;
           t1 = t2;
-          
         }
-      }
+     }
 
     PORTA = 255;
     buttonPressed == false;
